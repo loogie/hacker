@@ -1,0 +1,50 @@
+2019-05-29T10:27:48.229840500 0.006002s notice: In recursion: removing file 'rethinkdb_data\\tmp'
+2019-05-29T10:27:48.229840501 0.006638s warn: Trying to delete non-existent file 'rethinkdb_data\\tmp'
+2019-05-29T10:27:48.572337800 0.348798s info: Created directory 'rethinkdb_data' and a metadata file inside it.
+2019-05-29T10:27:57.210656900 0.008701s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2019-05-29T10:27:57.210656901 0.008873s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2019-05-29T10:27:57.210656902 0.008949s notice: Loading data from directory G:\\Dev\\Projects\\HTML\\hacker\\server\\rethinkdb\\rethinkdb_data
+2019-05-29T10:27:57.272235100 0.070625s info: Automatically using cache size of 3827 MB
+2019-05-29T10:27:57.272235101 0.070650s warn: bind failed: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2019-05-29T10:27:57.273236100 0.071342s error: TCP socket creation failed for port 29015: Input/output error.
+2019-05-29T10:28:31.545846100 0.007907s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2019-05-29T10:28:31.545846101 0.008065s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2019-05-29T10:28:31.545846102 0.008156s notice: Loading data from directory G:\\Dev\\Projects\\HTML\\hacker\\server\\rethinkdb\\rethinkdb_data
+2019-05-29T10:28:31.594152200 0.056188s info: Automatically using cache size of 3855 MB
+2019-05-29T10:28:31.596152700 0.058308s notice: Listening for intracluster connections on port 29015
+2019-05-29T10:28:31.597153700 0.059576s notice: Listening for client driver connections on port 28015
+2019-05-29T10:28:31.597153701 0.059746s notice: Listening for administrative HTTP connections on port 8080
+2019-05-29T10:28:31.598154400 0.059990s notice: Listening on cluster addresses: 127.0.0.1, 192.168.142.1, 192.168.214.1, 10.100.10.76, fe80::31fe:15f1:2096:4820%16, fe80::6860:50b3:a9:a412%3, fe80::d828:898b:ba93:bcf8%17
+2019-05-29T10:28:31.598154401 0.060220s notice: Listening on driver addresses: 127.0.0.1, 192.168.142.1, 192.168.214.1, 10.100.10.76, fe80::31fe:15f1:2096:4820%16, fe80::6860:50b3:a9:a412%3, fe80::d828:898b:ba93:bcf8%17
+2019-05-29T10:28:31.598154402 0.060475s notice: Listening on http addresses: 127.0.0.1, 192.168.142.1, 192.168.214.1, 10.100.10.76, fe80::31fe:15f1:2096:4820%16, fe80::6860:50b3:a9:a412%3, fe80::d828:898b:ba93:bcf8%17
+2019-05-29T10:28:31.598154403 0.060480s notice: Server ready, "GIS_SPEC_PC_8g3" 6af796f8-2d2e-4b63-a46c-9d69fb6c0a31
+2019-05-29T10:28:58.110550800 26.572826s info: Table 1f750c91-70af-4a8d-a75c-b595509cb0c1: Starting a new Raft election for term 1.
+2019-05-29T10:28:58.111234800 26.573199s info: Table 1f750c91-70af-4a8d-a75c-b595509cb0c1: Added replica on this server.
+2019-05-29T10:28:58.149466600 26.611764s info: Table 1f750c91-70af-4a8d-a75c-b595509cb0c1: This server is Raft leader for term 1. Latest log index is 0.
+2019-05-29T16:27:11.032920100 21520.002263s notice: Removing file G:\\Dev\\Projects\\HTML\\hacker\\server\\rethinkdb\\rethinkdb_data\\1f750c91-70af-4a8d-a75c-b595509cb0c1
+2019-05-29T16:27:11.032920101 21520.002271s info: Table 1f750c91-70af-4a8d-a75c-b595509cb0c1: Deleted the table.
+2019-05-29T16:27:14.872933000 21523.841634s info: Table d3a828e7-40bd-4317-afd2-03ab5f4bc890: Starting a new Raft election for term 1.
+2019-05-29T16:27:14.872933001 21523.841784s info: Table d3a828e7-40bd-4317-afd2-03ab5f4bc890: Added replica on this server.
+2019-05-29T16:27:14.923969200 21523.893079s info: Table d3a828e7-40bd-4317-afd2-03ab5f4bc890: This server is Raft leader for term 1. Latest log index is 0.
+2019-05-30T09:06:52.796242300 0.021591s notice: Running rethinkdb 2.3.6-windows (MSC 190024215)...
+2019-05-30T09:06:52.796242301 0.021752s notice: Running on 6.2.9200 (Windows 8, Server 2012)
+2019-05-30T09:06:52.796242302 0.021833s notice: Loading data from directory G:\\Dev\\Projects\\HTML\\hacker\\server\\rethinkdb\\rethinkdb_data
+2019-05-30T09:06:52.888286300 0.113587s info: Automatically using cache size of 3966 MB
+2019-05-30T09:06:52.889288200 0.114877s notice: Listening for intracluster connections on port 29015
+2019-05-30T09:06:52.902299800 0.127412s notice: Listening for client driver connections on port 28015
+2019-05-30T09:06:52.902299801 0.127542s notice: Listening for administrative HTTP connections on port 8080
+2019-05-30T09:06:52.902299802 0.127544s notice: Listening on cluster address: 127.0.0.1
+2019-05-30T09:06:52.902299803 0.127559s notice: Listening on driver address: 127.0.0.1
+2019-05-30T09:06:52.902299804 0.127560s notice: Listening on http address: 127.0.0.1
+2019-05-30T09:06:52.902299805 0.127561s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2019-05-30T09:06:52.902299806 0.127562s notice: Server ready, "GIS_SPEC_PC_8g3" 6af796f8-2d2e-4b63-a46c-9d69fb6c0a31
+2019-05-30T09:06:54.517650400 1.742836s info: Table d3a828e7-40bd-4317-afd2-03ab5f4bc890: Starting a new Raft election for term 2.
+2019-05-30T09:06:54.602557200 1.828256s info: Table d3a828e7-40bd-4317-afd2-03ab5f4bc890: This server is Raft leader for term 2. Latest log index is 2.
+2019-05-30T10:09:13.248134700 3740.496812s info: Table 3bbe9a63-a640-4a16-9cea-e099198f6acf: Starting a new Raft election for term 1.
+2019-05-30T10:09:13.248134701 3740.497342s info: Table 3bbe9a63-a640-4a16-9cea-e099198f6acf: Added replica on this server.
+2019-05-30T10:09:13.302708000 3740.551605s info: Table 3bbe9a63-a640-4a16-9cea-e099198f6acf: This server is Raft leader for term 1. Latest log index is 0.
+2019-05-30T16:30:36.903250800 26624.296897s notice: Server got Control-C; shutting down...
+2019-05-30T16:30:36.903250801 26624.297004s notice: Shutting down client connections...
+2019-05-30T16:30:36.903250802 26624.297069s notice: All client connections closed.
+2019-05-30T16:30:36.903250803 26624.297071s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2019-05-30T16:30:36.940318200 26624.334602s notice: Storage engine shut down.

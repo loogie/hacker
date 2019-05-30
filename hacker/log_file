@@ -1,0 +1,3 @@
+2019-05-28T16:39:07.148797900 0.005633s notice: In recursion: removing file 'hacker\\tmp'
+2019-05-28T16:39:07.149798000 0.006224s warn: Trying to delete non-existent file 'hacker\\tmp'
+2019-05-28T16:39:07.514153800 0.370378s info: Created directory 'hacker' and a metadata file inside it.
