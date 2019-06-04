@@ -2,118 +2,105 @@ import { routerActions } from 'connected-react-router';
 import openSocket from 'socket.io-client';
 import store from '../store';
 
-//MAP 
-export const SERVER_CONNECTED = 'server/CONNECTED';
+//MAP
+export const TIMER_TICK = 'timer/TICK';
+export const CURSOR_TAG = 'cursor/TAG/CHANGE';
 
-export const USER_PROFILE_UPDATE = 'user/PROFILE';
-export const USER_LOGOUT = 'user/PROFILE';
+export const NEW_LINE = 'lines/NEW';
+export const INPUT_UPDATE = 'input/UPDATE';
 
-export const COMMANDS_UPDATE = 'commands/UPDATE';
+let cursors = {};
+
+
+const StartTimer = (ms)=>{
+    return new Promise((resolve, reject)=>{
+        try{
+            var t = setInterval(()=>{
+                for (let id in cursors){
+                    if (cursors.hasOwnProperty(id)){
+                        let c = cursors[id];
+                        c.tick();
+                    }
+                }
+
+            }, ms);
+
+            resolve(t);
+        }
+        catch(err){
+            reject(err);
+        }
+    });
+}
+
+let timer = StartTimer(100);
 
 const initialState = {
-    connected: false,
-    user: null
+    input: '',
+    lines: [],
+    timer: false,
+    cursors:{}
 };
 
 export default (state = initialState, action)=>{
     switch(action.type){
-        case SERVER_CONNECTED:
+        case INPUT_UPDATE:
             return {
                 ...state,
-                connected:true
+                input: action.input
             }
-        case USER_PROFILE_UPDATE:
+        case NEW_LINE:
             return {
-                ...state, 
-                user: action.user
+                ...state,
+                lines: [...state.lines, action.text]
             }
-        case USER_LOGOUT:
-                let s = state;
-                s.user = null;
+        case TIMER_TICK:
+            return {
+                ...state,
+                timer: !state.timer
+            }
+        case CURSOR_TAG:
+            let cursors = state.cursors;
+            let c = {};
+            c[action.cursor.id] = action.cursor;
+            cursors = Object.assign(cursors, c);
 
-                return {
-                    ...s
-                }
-        case COMMANDS_UPDATE:
-            let commands = [...state.commands, action.commands.new_val];
             return {
                 ...state,
-                commands
+                timer: !state.timer,
+                cursors
             }
         default:
             return state;
     }
 }
 
-var socket;
-
-export const socketConn = () => {
+export const createCursor = (cursor) => {
     return dispatch => {
-        try{
-            socket = openSocket('http://localhost:3030');
-            socket.on('msg', (msg)=>{
-                console.log("MESSAGE");
-                console.log(msg);
-            })
+        cursors[cursor.id] = cursor;
 
-            dispatch({
-                type: SERVER_CONNECTED
-            });
-
-            socket.on("user_error", user_error_handler);
-        }
-        catch(e){
-            throw e;
-        }
-    }
-}
-
-export const createUser = (login) =>{
-    return dispatch => {
-        console.log(login);
-
-        socket.on('user_validate', user_valid_handler);
-        socket.emit('create_user', login);
-    }
-}
-
-export const loginUser = (login) =>{
-    return dispatch => {
-        socket.on('user_validate', user_valid_handler);
-        socket.emit('user_login', login);
-    }
-}
-
-export const logout = () =>{
-    return dispatch => {
-        socket.emit('user_logout');
         dispatch({
-            type: USER_LOGOUT
+            type:CURSOR_TAG,
+            cursor: {id:cursor.id, tag: cursor.options.tag}
         });
     }
 }
 
-const user_error_handler = (e) => {
-    throw e;
+export const updateInput = (text) =>{
+    return dispatch =>{
+        dispatch({
+            type: INPUT_UPDATE,
+            input: text
+        })
+    }
 }
 
-const user_valid_handler = (user) => {
-    console.log("user validate");
-
-    var dispatch = store.dispatch;
-
-    if (user !== false){
+export const enterCommand = (command) => {
+    return dispatch => {
+        //for now just display on screen
         dispatch({
-            type: USER_PROFILE_UPDATE,
-            user
+            type: NEW_LINE,
+            text: {text:command}
         })
     }
-    else {
-        dispatch({
-            type: USER_PROFILE_UPDATE,
-            user
-        })
-    }
-
-    socket.off('user_validate', user_valid_handler);
 }
